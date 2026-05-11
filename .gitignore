@@ -1,0 +1,28 @@
+# Model weights and cache
+models/
+cache/
+*.bin
+*.pt
+*.pth
+*.safetensors
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.env
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large files
+*.tar.gz
+*.zip

@@ -1,0 +1,98 @@
+[
+  {
+    "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "model_name": "TinyLlama-1.1B",
+    "category": "Tier 1: Tiny",
+    "device": "cuda",
+    "timestamp": "2026-05-11T11:12:24.687893",
+    "load_time_seconds": 34.5898277759552,
+    "generation_time_seconds": 17.301181077957153,
+    "input_tokens": 114,
+    "output_tokens": 323,
+    "tokens_per_second": 18.669245674303895,
+    "response_length": 967,
+    "response_preview": "```python\ndef longest_substring(s):\n    # Initialize length of longest substring\n    len_longest = 0\n    \n    # Initialize start and end pointers\n    start, end = 0, 0\n    \n    # Loop through each character\n    for I in range(len(s)):\n        \n        # If the character is not repeating, add it to the length of the longest substring\n        if s[i] not in s[start:end].cache:\n            len_longest = max(len_longest, i - start + 1)\n            start = i + 1\n            \n    # Return both the sub",
+    "full_response": "```python\ndef longest_substring(s):\n    # Initialize length of longest substring\n    len_longest = 0\n    \n    # Initialize start and end pointers\n    start, end = 0, 0\n    \n    # Loop through each character\n    for I in range(len(s)):\n        \n        # If the character is not repeating, add it to the length of the longest substring\n        if s[i] not in s[start:end].cache:\n            len_longest = max(len_longest, i - start + 1)\n            start = i + 1\n            \n    # Return both the substring and its length\n    return s[start:end], len_longest\n```\n\nExample usage:\n```python\n>>> longest_substring(\"abcabbc\")\n('b', 5)\n>>> longest_substring(\"abbbcc\")\n('b', 3)\n>>> longest_substring(\"abba\")\n('b', 2)\n>>> longest_substring(\"abbbb\")\n('b', 2)\n```\n\nTest cases:\n```python\nassert longest_substring(\"abcabbc\") == ('b', 5)\nassert longest_substring(\"abbbcc\") == ('b', 3)\nassert longest_substring(\"abba\") == ('b', 2)\nassert longest_substring(\"abbbb\") == ('b', 2)\n```",
+    "quality_metrics": {
+      "has_function_def": true,
+      "has_comments": true,
+      "has_docstring": false,
+      "has_examples": true,
+      "has_error_handling": false,
+      "code_blocks": 6,
+      "quality_score": 7.0
+    }
+  },
+  {
+    "model_id": "deepseek-ai/deepseek-coder-1.3b-instruct",
+    "model_name": "DeepSeek-Coder-1.3B",
+    "category": "Tier 2: Small Coding",
+    "device": "cuda",
+    "timestamp": "2026-05-11T11:13:16.638582",
+    "load_time_seconds": 29.063864946365356,
+    "generation_time_seconds": 25.664191007614136,
+    "input_tokens": 113,
+    "output_tokens": 480,
+    "tokens_per_second": 18.70310269501938,
+    "response_length": 1620,
+    "response_preview": "Solution:\n\n```python\ndef longest_substring(s):\n    \"\"\"\n    This function returns the longest substring without repeating characters.\n    \"\"\"\n    # Initialize the maximum length, start index, and end index\n    max_length = 0\n    start = 0\n    end = 0\n    # Initialize a set to store the characters\n    char_set = set()\n\n    # Loop through the string\n    for i in range(len(s)):\n        # If the character is in the set, update the start index\n        if s[i] in char_set:\n            start = i + 1\n   ",
+    "full_response": "Solution:\n\n```python\ndef longest_substring(s):\n    \"\"\"\n    This function returns the longest substring without repeating characters.\n    \"\"\"\n    # Initialize the maximum length, start index, and end index\n    max_length = 0\n    start = 0\n    end = 0\n    # Initialize a set to store the characters\n    char_set = set()\n\n    # Loop through the string\n    for i in range(len(s)):\n        # If the character is in the set, update the start index\n        if s[i] in char_set:\n            start = i + 1\n        else:\n            # Else, update the maximum length and end index\n            max_length = max(max_length, i - start + 1)\n            end = i\n\n        # Add the character to the set\n        char_set.add(s[i])\n\n    # Return the longest substring and its length\n    return s[start:end+1], max_length\n\n# Test cases\nprint(longest_substring('abcabcbb'))  # ('abc', 3)\nprint(longest_substring('bbbbbb'))  # ('b', 1)\nprint(longest_substring('pwwkew'))  # ('wke', 3)\nprint(longest_substring(''))  # ('', 0)\nprint(longest_substring('a'))  # ('a', 1)\nprint(longest_substring('abcdefgh'))  # ('defgh', 3)\n```\n\nThis solution uses a sliding window approach. It maintains a set of characters and a pointer to the start of the window. When it encounters a character that's already in the set, it moves the start pointer to the next character. It keeps track of the maximum length seen so far and the end of the window. The time complexity of this solution is O(n) because each character is visited once, and the space complexity is O(min(n, m)) where m is the size of the charset, in the worst case when all characters are unique.",
+    "quality_metrics": {
+      "has_function_def": true,
+      "has_comments": true,
+      "has_docstring": true,
+      "has_examples": false,
+      "has_error_handling": false,
+      "code_blocks": 2,
+      "quality_score": 6.0
+    }
+  },
+  {
+    "model_id": "microsoft/phi-2",
+    "model_name": "Phi-2-2.7B",
+    "category": "Tier 2: Small General",
+    "device": "cuda",
+    "timestamp": "2026-05-11T11:14:11.415137",
+    "load_time_seconds": 58.88065528869629,
+    "generation_time_seconds": 0.548419713973999,
+    "input_tokens": 109,
+    "output_tokens": 3,
+    "tokens_per_second": 5.470262872684099,
+    "response_length": 0,
+    "response_preview": "",
+    "full_response": "",
+    "quality_metrics": {
+      "has_function_def": false,
+      "has_comments": false,
+      "has_docstring": false,
+      "has_examples": false,
+      "has_error_handling": false,
+      "code_blocks": 0,
+      "quality_score": 0.0
+    }
+  },
+  {
+    "model_id": "bigcode/starcoder2-3b",
+    "model_name": "StarCoder2-3B",
+    "category": "Tier 2: Small Coding",
+    "device": "cuda",
+    "timestamp": "2026-05-11T11:15:10.908173",
+    "load_time_seconds": 314.8362293243408,
+    "generation_time_seconds": 33.292720794677734,
+    "input_tokens": 109,
+    "output_tokens": 512,
+    "tokens_per_second": 15.378737086632155,
+    "response_length": 1860,
+    "response_preview": "Solution:\n\nThe following solution is based on a brute force approach where we iterate through all possible substrings and then check if the substring has no repeating characters.\n\nThe time complexity of the solution is O(n^2) because we iterate through all substrings of length 1 to n, and we check each substring for no repeating characters.\n\nThe function `find_longest_substring` has the following signature:\n\n```python\ndef find_longest_substring(s):\n```\n\nExample usage:\n\n```python\n# Example 1\nlong",
+    "full_response": "Solution:\n\nThe following solution is based on a brute force approach where we iterate through all possible substrings and then check if the substring has no repeating characters.\n\nThe time complexity of the solution is O(n^2) because we iterate through all substrings of length 1 to n, and we check each substring for no repeating characters.\n\nThe function `find_longest_substring` has the following signature:\n\n```python\ndef find_longest_substring(s):\n```\n\nExample usage:\n\n```python\n# Example 1\nlongest_substring = find_longest_substring(\"abc\")\nprint(longest_substring) # (\"abc\", 3)\n\n# Example 2\nlongest_substring = find_longest_substring(\"abba\")\nprint(longest_substring) # (\"ab\", 2)\n\n# Example 3\nlongest_substring = find_longest_substring(\"abcabcbb\")\nprint(longest_substring) # (\"abc\", 3)\n\n# Example 4\nlongest_substring = find_longest_substring(\"pwwkew\")\nprint(longest_substring) # (\"wke\", 3)\n```\n\nTest cases:\n\n```python\n# Test cases\nassert find_longest_substring(\"abc\") == (\"abc\", 3)\nassert find_longest_substring(\"abba\") == (\"ab\", 2)\nassert find_longest_substring(\"abcabcbb\") == (\"abc\", 3)\nassert find_longest_substring(\"pwwkew\") == (\"wke\", 3)\nassert find_longest_substring(\"\") == (None, 0)\n```\n\nThe following is the complete Python code for the solution:\n\n```python\ndef find_longest_substring(s):\n    \"\"\"\n    Finds the longest substring without repeating characters in a given string.\n    Returns both the substring and its length.\n\n    Arguments:\n    s (str): The input string.\n\n    Returns:\n    tuple: The longest substring without repeating characters and its length.\n\n    Raises:\n    ValueError: If the input string is empty.\n    \"\"\"\n    if not s:\n        raise ValueError(\"Input string cannot be empty.\")\n\n    longest_substring = \"\"\n    longest_substring_length = 0\n    current_substring = \"\"\n    current_substring_length = 0\n\n    for i in range(len(",
+    "quality_metrics": {
+      "has_function_def": true,
+      "has_comments": true,
+      "has_docstring": true,
+      "has_examples": true,
+      "has_error_handling": false,
+      "code_blocks": 7,
+      "quality_score": 8.5
+    }
+  }
+]
