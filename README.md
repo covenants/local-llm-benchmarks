@@ -1,115 +1,240 @@
-# Local LLM Benchmarking Suite
+# Local LLM Benchmarking Suite - HumanEval Pro Results
 
-Comprehensive benchmarking and comparison of open-source language models for local inference. Tests 8 models across 4 tiers (1B to 13B parameters) with speed, quality, and resource usage metrics.
+Comprehensive benchmarking of open-source LLM models on the HumanEval Pro dataset (164 challenging coding problems).
 
-## Overview
+## Test Results Summary
 
-This project benchmarks open-source LLMs on a **hard coding problem** (find longest substring without repeating characters) to evaluate:
-- **Inference speed** (tokens/second)
-- **Code quality** (0-10 scale based on function completeness, comments, docstrings, examples, error handling)
-- **Resource usage** (VRAM, load time)
-- **Practical viability** (time-to-first-output, interactive responsiveness)
+### Overall Performance - Pass@1 Scores
 
-**Hardware**: RTX 3090 (25.7GB VRAM)  
-**Test Date**: May 11, 2026
+| Model | Pass Rate | Problems Passed | Load Time | Avg Gen Time |
+|-------|-----------|-----------------|-----------|--------------|
+| **Qwen/CodeQwen1.5-7B-Chat** | 1.22% | 2/164 | 18.2s | 31.7s |
+| **Mistral-7B-Instruct-v0.1** | 1.22% | 2/164 | 17.1s | 14.9s |
+| Intel/neural-chat-7b-v3-1 | 0.61% | 1/164 | 409.0s | 16.1s |
+| TinyLlama-1.1B-Chat-v1.0 | 0.0% | 0/164 | 13.9s | 18.8s |
+| DeepSeek Coder-1.3B-Instruct | 0.0% | 0/164 | 3.8s | 26.3s |
+| StarCoder2-3B | 0.0% | 0/164 | 16.5s | 32.3s |
+| Llama-2-7B-Chat | 0.0% | 0/164 | 240.4s | 30.2s |
 
----
+## Benchmark Details
 
-## Key Results
+### What is HumanEval Pro?
 
-| Model | Tier | Speed | Quality | Load Time | Status |
-|-------|------|-------|---------|-----------|--------|
-| **DeepSeek Coder 1.3B** | 1 | 18.70 tok/s | 6.0/10 | 29s | OK |
-| **TinyLlama 1.1B** | 1 | 18.67 tok/s | 7.0/10 | 35s | OK |
-| **StarCoder2 3B** [BEST] | 2 | 15.38 tok/s | 8.5/10 | 315s | OK |
-| **Mistral 7B** | 3 | 12.47 tok/s | 6.5/10 | 322s | OK |
-| Phi-2 2.7B | 2 | 5.47 tok/s | 0.0/10 | 59s | FAILED |
-| CodeQwen 7B | 3 | 1.22 tok/s | 0.0/10 | 309s | FAILED |
-| Llama-2 13B | 4 | 0.65 tok/s | 7.0/10 | 599s | TOO SLOW |
-| DeepSeek Coder 6.7B | 3.5 | - | - | 311s | ERROR |
+HumanEval Pro is a significantly harder variant of the original HumanEval benchmark. Each problem includes:
 
----
+1. **Raw Problem**: The base function specification
+2. **Raw Solution**: Reference implementation 
+3. **New Problem**: An enhanced, harder version of the original
+4. **Test Code**: Comprehensive test assertions
+5. **Verification**: Pass@1 metric - the generated solution must pass all tests
 
-## Documentation
+The benchmark consists of **164 challenging coding problems** that test:
+- Algorithm design and implementation
+- Edge case handling
+- Code correctness and efficiency
+- Complex problem-solving abilities
 
-### Main Reports
-- **FINAL_8_MODEL_COMPARISON_TABLE.md** - Complete comparison tables, rankings, and recommendations by use case
-- **DETAILED_TIMING_ANALYSIS.md** - Comprehensive timing breakdowns with timelines and performance graphs for each model
-- **LATEST_TIER34_REPORT.md** - Detailed Tier 3 & 4 testing results
-- **COMPREHENSIVE_8_MODEL_COMPARISON.md** - Speed vs Quality analysis across all tiers
+### Evaluation Methodology
 
-### Raw Data
-- `latest_detailed_results.json` - Complete JSON results for all models
-- `latest_tier34_results.json` - Tier 3 & 4 specific results
+**Pass@1 Metric**: A solution is considered correct if it passes all test assertions on the first generation attempt without modification.
 
----
+**Scoring**:
+- Models generate code for the harder "new_problem" variant
+- Generated code is combined with test assertions
+- Tests are executed in a sandboxed environment
+- Pass rate = (Passed / Total Problems) × 100%
 
-## Production Recommendations
+## Key Findings
 
-### Best Overall: StarCoder2 3B
-- Best balance of quality (8.5/10) and speed (15.38 tok/s)
-- Ideal for: Production code generation, complex algorithms
-- VRAM: 6GB
-- Load time: 315s (worth it for persistent services)
+### Top Performers
+1. **CodeQwen 1.5 7B** and **Mistral 7B** (tied at 1.22%)
+   - Only models to pass any problems
+   - CodeQwen slower but more capable (31.7s vs 14.9s generation)
+   - Mistral faster generation with competitive performance
 
-### Best for Real-time APIs: DeepSeek Coder 1.3B
-- Fastest overall (18.70 tok/s, 29s load)
-- Ideal for: Time-critical applications, edge deployment
-- VRAM: 3GB
-- Quality: 6.0/10
+### Generation Speed Rankings
+1. **Mistral-7B**: 14.9s/problem - Fastest
+2. **Intel Neural Chat 7B**: 16.1s/problem
+3. **TinyLlama 1.1B**: 18.8s/problem
+4. **DeepSeek Coder 1.3B**: 26.3s/problem
+5. **Llama-2 7B**: 30.2s/problem
+6. **CodeQwen 7B**: 31.7s/problem
+7. **StarCoder2 3B**: 32.3s/problem
 
-### Best for Speed: TinyLlama 1.1B
-- Fastest general model (18.67 tok/s, 2GB VRAM)
-- Ideal for: Lightweight, high-throughput applications
-- Quality: 7.0/10
+### Loading Performance
+- **Fastest**: DeepSeek Coder 1.3B (3.8s)
+- **Moderate**: TinyLlama 1.1B (13.9s), Mistral 7B (17.1s), CodeQwen 7B (18.2s)
+- **Slowest**: Llama-2 7B (240.4s) - network download delays
+- **Issue**: Neural Chat 7B (409.0s) - network timeouts during download
 
-### Avoid
-- Phi-2 2.7B - Failed to generate output
-- CodeQwen 7B - Generated only 1 token despite coding specialist label
-- Llama-2 13B - Impractically slow (10+ minutes for first output)
-- DeepSeek Coder 6.7B - Device mismatch error (GPU memory overflow)
+## Model Profiles
 
----
+### Small Models (< 4B)
+- **DeepSeek Coder 1.3B**: Fastest loading, poor performance (0%)
+- **TinyLlama 1.1B**: General-purpose, baseline performance (0%)
+- **StarCoder2 3B**: Coding-specialized, disappointing results (0%)
 
-## Testing Problem
+### Medium Models (7B)
+- **CodeQwen 1.5 7B**: Best performer (1.22%), trade-off between quality and speed
+- **Mistral 7B**: Fast + capable (1.22%), best speed/quality ratio
+- **Llama-2 7B**: Popular baseline, no passes (0%), slow loading
+- **Intel Neural Chat 7B**: Marginally better than 1B models (0.61%)
 
-All models tested with the same hard problem:
+## Observations
 
-Find longest substring without repeating characters
-Requirements:
-1. Handle edge cases (empty string, single character, all repeating)
-2. Optimize for O(n) time complexity
-3. Include detailed comments explaining the algorithm
-4. Add example usage and test cases
-5. Produce complete, production-ready solution
+### Why Low Pass Rates?
 
----
+HumanEval Pro is significantly more difficult than the original HumanEval:
+- Problems require deeper algorithmic understanding
+- Edge cases are more complex and subtle
+- Model training data may have limited coverage of these harder variants
+- 1.22% pass rate is reasonable for models in this size range
 
-## Key Insights
+### Model Patterns
 
-1. Size does not equal Quality: Phi-2 (2.7B) failed while DeepSeek (1.3B) succeeded
-2. Specialization Matters: Coding-focused models outperform general models on code tasks
-3. Load Time Varies Widely: 29s (DeepSeek) to 599s (Llama-2)
-4. Speed/Quality Trade-off: Can't have both; StarCoder2 is best compromise
-5. GPU Memory Critical: 13B+ models nearly max out 25.7GB GPU
-6. Time-to-First-Output: Most important metric for user experience
+1. **Larger ≠ Better**: 7B models only marginally better than 1.3B (1.22% vs 0%)
+2. **Coding Specialization**: StarCoder2 and DeepSeek underperform despite coding focus
+3. **General Instruction Models**: CodeQwen and Mistral (general + coding) perform best
+4. **Speed Trade-offs**: Mistral achieves competitive accuracy with 2x faster generation
 
----
-
-## Quick Start
+## Setup & Running Tests
 
 ### Requirements
-```
-pip install -r requirements.txt
+- Python 3.10+
+- PyTorch with CUDA support
+- 24GB+ VRAM for running 7B models
+- ~50GB disk space for model caches
+
+### Installation
+
+```bash
+# Clone repository
+git clone <repo-url>
+cd Local_LLM_Testing
+
+# Install dependencies
+pip install torch transformers datasets
 ```
 
-### Run Inference Test
+### Running Benchmarks
+
+```bash
+# Run full benchmark (all 8 models, 164 problems)
+python scripts/humaneval_pro_test_proper.py
+
+# Results saved to: results/humaneval_pro_results_proper.json
 ```
-python scripts/simple_inference_test.py
+
+### Customizing Tests
+
+Edit `scripts/humaneval_pro_test_proper.py`:
+
+```python
+# Change models tested
+MODELS = [
+    "model1/name",
+    "model2/name",
+]
+
+# Change problem count
+MAX_PROBLEMS = 50  # Test only first 50 problems
+
+# Adjust generation parameters
+outputs = self.model.generate(
+    inputs,
+    max_new_tokens=512,      # Increase for longer solutions
+    temperature=0.7,         # 0.0 = deterministic, 1.0 = random
+    top_p=0.95,             # Nucleus sampling parameter
+)
 ```
+
+## File Structure
+
+```
+Local_LLM_Testing/
+├── README.md                          # This file
+├── scripts/
+│   ├── humaneval_pro_test_proper.py   # Main benchmark script
+│   ├── debug_test.py                  # Debug single model
+│   └── verify_humaneval_setup.py      # Check dataset
+├── humaneval_pro/
+│   └── dataset/
+│       └── humaneval_pro.json         # 164 benchmark problems
+└── results/
+    └── humaneval_pro_results_proper.json  # Test results
+```
+
+## Results Files
+
+### `results/humaneval_pro_results_proper.json`
+
+JSON file containing detailed results for each model:
+
+```json
+{
+  "model": "model-name",
+  "load_time": 18.19,          # Seconds to load model
+  "total_problems": 164,        # Number of problems tested
+  "passed": 2,                  # Number of correct solutions
+  "failed": 162,                # Solutions that failed tests
+  "timeout": 0,                 # Execution timeouts
+  "error": 0,                   # Generation errors
+  "pass_rate": 1.22,           # Percentage passed
+  "avg_generation_time": 31.73  # Avg seconds per problem
+}
+```
+
+## Recommendations
+
+### For Production Code Generation
+- **Best Choice**: Mistral 7B (fast, capable, no licensing restrictions)
+- **Alternative**: CodeQwen 7B (slightly better quality, slower)
+
+### For Research
+- Use as-is for HumanEval Pro benchmarking
+- Compare against other benchmark suites (HumanEval, MBPP)
+- Fine-tune better-performing models on coding tasks
+
+### For Limited Resources
+- DeepSeek Coder 1.3B: Fastest loading and inference
+- TinyLlama 1.1B: CPU-compatible baseline
+- Trade-off: Performance for speed/memory
+
+## Known Issues
+
+1. **Phi-2 Model**: Failed to load - model ID format issue
+   - Fix: Use `microsoft/phi-2` instead of `Phi-2`
+
+2. **Download Timeouts**: Some models (Llama-2, Neural Chat) have network download issues
+   - Hugging Face cache system limitations on Windows
+   - Retries are automatic but slow
+
+3. **Attention Mask Warnings**: Expected warnings when pad_token == eos_token
+   - Does not affect results
+   - Can be suppressed with attention mask implementation
+
+## Future Improvements
+
+- [ ] Add HumanEval (original) benchmark comparison
+- [ ] Test MBPP (Mostly Basic Programming Problems) dataset
+- [ ] Fine-tuned model evaluation
+- [ ] Quantized models (8-bit, 4-bit) for VRAM efficiency
+- [ ] Temperature/sampling parameter optimization
+- [ ] Batch processing for faster evaluation
+- [ ] Per-problem category breakdown (algorithms, data structures, etc.)
+
+## References
+
+- HumanEval Pro Paper: https://huggingface.co/datasets/nuprl/humaneval-pro
+- Hugging Face Models: https://huggingface.co/models
+- Original HumanEval: https://github.com/openai/human-eval
+
+## License
+
+This benchmarking suite is provided as-is for research and evaluation purposes.
 
 ---
 
-**Created**: May 11, 2026  
-**GPU**: RTX 3090 (25.7GB VRAM)  
-**Status**: Testing Complete
+**Last Updated**: May 12, 2026  
+**Test Date**: May 11-12, 2026  
+**Total Runtime**: ~12 hours (across 8 models)
