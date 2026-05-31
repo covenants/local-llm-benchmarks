@@ -109,28 +109,82 @@ HumanEval Pro is significantly more difficult than the original HumanEval:
 
 ### Requirements
 - Python 3.10+
-- PyTorch with CUDA support
-- 24GB+ VRAM for running 7B models
-- ~50GB disk space for model caches
+- 24GB+ VRAM (NVIDIA GPU) recommended
+- ~20GB disk space for the Qwen3-Coder model
 
-### Installation
+---
+
+### Option A — Qwen3-Coder-30B via Ollama (recommended)
+
+This is the highest-performing setup (60.4% pass rate). Ollama handles GPU acceleration automatically — no CUDA toolkit needed.
+
+**1. Install Ollama**
+
+Download from [ollama.com](https://ollama.com) and run the installer. Ollama runs as a background service after installation.
+
+**2. Clone and install Python dependencies**
 
 ```bash
-# Clone repository
-git clone <repo-url>
-cd Local_LLM_Testing
-
-# Install dependencies
-pip install torch transformers datasets
+git clone https://github.com/covenants/local-llm-benchmarks.git
+cd local-llm-benchmarks
+pip install ollama huggingface_hub
 ```
+
+**3. Download the model and run the smoke test**
+
+```bash
+python scripts/qwen3_coder_smoke_test.py
+```
+
+This downloads the GGUF file (~15.3GB, one-time) and runs a single coding prompt to confirm everything works. Expected output: ~100+ tokens/sec on a 24GB GPU.
+
+**4. Run the full HumanEval Pro benchmark**
+
+```bash
+python scripts/qwen3_coder_humaneval_pro.py
+```
+
+Results are saved to `results/qwen3_coder_humaneval_pro_results.json`.
+
+**Use the model interactively**
+
+```bash
+ollama run qwen3-coder-30b-iq4xs
+```
+
+Or call it from Python:
+
+```python
+import ollama
+
+response = ollama.chat(
+    model="qwen3-coder-30b-iq4xs",
+    messages=[{"role": "user", "content": "Write a binary search in Python. /no_think"}],
+)
+print(response["message"]["content"])
+```
+
+---
+
+### Option B — Smaller models via Transformers (7B and under)
+
+For smaller models without Ollama:
+
+```bash
+pip install torch transformers datasets accelerate
+python scripts/humaneval_pro_test_proper.py
+```
+
+Requires PyTorch with CUDA (`pip install torch --index-url https://download.pytorch.org/whl/cu118`).
 
 ### Running Benchmarks
 
 ```bash
-# Run full benchmark (all 8 models, 164 problems)
-python scripts/humaneval_pro_test_proper.py
+# Qwen3-Coder-30B (Ollama) — recommended
+python scripts/qwen3_coder_humaneval_pro.py
 
-# Results saved to: results/humaneval_pro_results_proper.json
+# 7B dense models (Transformers)
+python scripts/humaneval_pro_test_proper.py
 ```
 
 ### Customizing Tests
