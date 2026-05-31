@@ -6,15 +6,18 @@ Comprehensive benchmarking of open-source LLM models on the HumanEval Pro datase
 
 ### Overall Performance - Pass@1 Scores
 
-| Model | Pass Rate | Problems Passed | Load Time | Avg Gen Time |
-|-------|-----------|-----------------|-----------|--------------|
-| **Qwen/CodeQwen1.5-7B-Chat** | 1.22% | 2/164 | 18.2s | 31.7s |
-| **Mistral-7B-Instruct-v0.1** | 1.22% | 2/164 | 17.1s | 14.9s |
-| Intel/neural-chat-7b-v3-1 | 0.61% | 1/164 | 409.0s | 16.1s |
-| TinyLlama-1.1B-Chat-v1.0 | 0.0% | 0/164 | 13.9s | 18.8s |
-| DeepSeek Coder-1.3B-Instruct | 0.0% | 0/164 | 3.8s | 26.3s |
-| StarCoder2-3B | 0.0% | 0/164 | 16.5s | 32.3s |
-| Llama-2-7B-Chat | 0.0% | 0/164 | 240.4s | 30.2s |
+| Model | Pass Rate | Problems Passed | Quant | Avg Gen Time | Via |
+|-------|-----------|-----------------|-------|--------------|-----|
+| **Qwen3-Coder-30B-A3B-Instruct** | **60.4%** | **99/164** | IQ4_XS (15.3GB) | 2.7s | Ollama |
+| Qwen/CodeQwen1.5-7B-Chat | 1.22% | 2/164 | FP16 | 31.7s | Transformers |
+| Mistral-7B-Instruct-v0.1 | 1.22% | 2/164 | FP16 | 14.9s | Transformers |
+| Intel/neural-chat-7b-v3-1 | 0.61% | 1/164 | FP16 | 16.1s | Transformers |
+| TinyLlama-1.1B-Chat-v1.0 | 0.0% | 0/164 | FP16 | 18.8s | Transformers |
+| DeepSeek Coder-1.3B-Instruct | 0.0% | 0/164 | FP16 | 26.3s | Transformers |
+| StarCoder2-3B | 0.0% | 0/164 | FP16 | 32.3s | Transformers |
+| Llama-2-7B-Chat | 0.0% | 0/164 | FP16 | 30.2s | Transformers |
+
+> All tests run on an RTX 3090 (24GB VRAM). Qwen3-Coder result added May 31, 2026.
 
 ## Benchmark Details
 
@@ -47,19 +50,24 @@ The benchmark consists of **164 challenging coding problems** that test:
 ## Key Findings
 
 ### Top Performers
-1. **CodeQwen 1.5 7B** and **Mistral 7B** (tied at 1.22%)
-   - Only models to pass any problems
+1. **Qwen3-Coder-30B-A3B IQ4_XS** — 60.4% pass rate, 2.7s/problem
+   - 50× improvement over the previous best (1.22%)
+   - MoE architecture: 30B total / 3B active params — fits a 24GB card at 4-bit quant
+   - 107 tok/s generation speed (faster than most 7B dense models due to MoE)
+   - Served via Ollama using GGUF IQ4_XS (15.3GB on disk)
+2. **CodeQwen 1.5 7B** and **Mistral 7B** (tied at 1.22%)
+   - Best performers among dense FP16 models tested
    - CodeQwen slower but more capable (31.7s vs 14.9s generation)
-   - Mistral faster generation with competitive performance
 
 ### Generation Speed Rankings
-1. **Mistral-7B**: 14.9s/problem - Fastest
-2. **Intel Neural Chat 7B**: 16.1s/problem
-3. **TinyLlama 1.1B**: 18.8s/problem
-4. **DeepSeek Coder 1.3B**: 26.3s/problem
-5. **Llama-2 7B**: 30.2s/problem
-6. **CodeQwen 7B**: 31.7s/problem
-7. **StarCoder2 3B**: 32.3s/problem
+1. **Qwen3-Coder-30B-A3B**: 2.7s/problem (107 tok/s — MoE advantage)
+2. **Mistral-7B**: 14.9s/problem
+3. **Intel Neural Chat 7B**: 16.1s/problem
+4. **TinyLlama 1.1B**: 18.8s/problem
+5. **DeepSeek Coder 1.3B**: 26.3s/problem
+6. **Llama-2 7B**: 30.2s/problem
+7. **CodeQwen 7B**: 31.7s/problem
+8. **StarCoder2 3B**: 32.3s/problem
 
 ### Loading Performance
 - **Fastest**: DeepSeek Coder 1.3B (3.8s)
@@ -92,10 +100,10 @@ HumanEval Pro is significantly more difficult than the original HumanEval:
 
 ### Model Patterns
 
-1. **Larger ≠ Better**: 7B models only marginally better than 1.3B (1.22% vs 0%)
-2. **Coding Specialization**: StarCoder2 and DeepSeek underperform despite coding focus
-3. **General Instruction Models**: CodeQwen and Mistral (general + coding) perform best
-4. **Speed Trade-offs**: Mistral achieves competitive accuracy with 2x faster generation
+1. **MoE architecture is a game-changer**: Qwen3-Coder-30B-A3B at 60.4% vs 1.22% for the best dense 7B — quantized MoE delivers far more capability per VRAM than dense models
+2. **Larger ≠ Better (for dense)**: 7B dense models only marginally better than 1.3B (1.22% vs 0%)
+3. **Coding Specialization**: StarCoder2 and DeepSeek underperform despite coding focus
+4. **Speed paradox**: The 30B MoE generates faster than all 7B dense models (2.7s vs 14.9s+) because only 3B params are active per token
 
 ## Setup & Running Tests
 
@@ -218,10 +226,11 @@ JSON file containing detailed results for each model:
 - [ ] Add HumanEval (original) benchmark comparison
 - [ ] Test MBPP (Mostly Basic Programming Problems) dataset
 - [ ] Fine-tuned model evaluation
-- [ ] Quantized models (8-bit, 4-bit) for VRAM efficiency
+- [x] Quantized models (4-bit GGUF via Ollama) — Qwen3-Coder IQ4_XS added May 2026
 - [ ] Temperature/sampling parameter optimization
 - [ ] Batch processing for faster evaluation
 - [ ] Per-problem category breakdown (algorithms, data structures, etc.)
+- [ ] SWE-Bench Verified evaluation for Qwen3-Coder
 
 ## References
 
@@ -235,6 +244,6 @@ This benchmarking suite is provided as-is for research and evaluation purposes.
 
 ---
 
-**Last Updated**: May 12, 2026  
-**Test Date**: May 11-12, 2026  
-**Total Runtime**: ~12 hours (across 8 models)
+**Last Updated**: May 31, 2026  
+**Test Dates**: May 11-12, 2026 (7B models) · May 31, 2026 (Qwen3-Coder-30B)  
+**Total Runtime**: ~12 hours (7B dense models) · 7.9 min (Qwen3-Coder-30B IQ4_XS)

@@ -1,0 +1,998 @@
+{
+  "model": "qwen3-coder-30b-iq4xs",
+  "total": 164,
+  "passed": 99,
+  "failed": 65,
+  "error": 0,
+  "timeout": 0,
+  "pass_rate": 60.36585365853659,
+  "avg_gen_time": 2.7434424874259205,
+  "total_tokens": 0,
+  "problems": [
+    {
+      "id": 0,
+      "passed": true,
+      "gen_time": 2.28,
+      "error": ""
+    },
+    {
+      "id": 1,
+      "passed": true,
+      "gen_time": 2.04,
+      "error": ""
+    },
+    {
+      "id": 2,
+      "passed": true,
+      "gen_time": 1.25,
+      "error": ""
+    },
+    {
+      "id": 3,
+      "passed": false,
+      "gen_time": 0.92,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpv1xj3den.py\", line 13, in <module>\n    assert any_account_below_zero([[1, 2, 3], [4, 5, 6]]) == False\nNameError: "
+    },
+    {
+      "id": 4,
+      "passed": true,
+      "gen_time": 2.79,
+      "error": ""
+    },
+    {
+      "id": 5,
+      "passed": false,
+      "gen_time": 1.08,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpg7tt8ab1.py\", line 18, in <module>\n    assert double_intersperse([], 4, 5) == []\nNameError: name 'double_interspe"
+    },
+    {
+      "id": 6,
+      "passed": true,
+      "gen_time": 2.05,
+      "error": ""
+    },
+    {
+      "id": 7,
+      "passed": false,
+      "gen_time": 1.12,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpz491xbea.py\", line 16, in <module>\n    assert filter_by_multiple_substrings([], ['a']) == set([])\nAssertionError\n"
+    },
+    {
+      "id": 8,
+      "passed": false,
+      "gen_time": 2.7,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpi04dvxqg.py\", line 35, in <module>\n    assert sum_product_of_lists([[], [1, 2, 3], [4, 5]]) == ([(0, 1), (6, 6), "
+    },
+    {
+      "id": 9,
+      "passed": false,
+      "gen_time": 4.54,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmp56xnc1y8.py\", line 51, in <module>\n    assert rolling_max_across_lists([[1, 2, 3, 2, 3, 4, 2], [5, 6, 2, 8, 3, 1,"
+    },
+    {
+      "id": 10,
+      "passed": false,
+      "gen_time": 2.49,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmp6t9l2jz5.py\", line 29, in <module>\n    assert concatenate_palindromes(['cat', 'cata']) == 'cataccatac'\nAssertionE"
+    },
+    {
+      "id": 11,
+      "passed": false,
+      "gen_time": 1.75,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmp91qevl4x.py\", line 20, in <module>\n    assert cumulative_xor(['010', '110', '101']) == '001'\nAssertionError\n"
+    },
+    {
+      "id": 12,
+      "passed": true,
+      "gen_time": 1.08,
+      "error": ""
+    },
+    {
+      "id": 13,
+      "passed": true,
+      "gen_time": 2.38,
+      "error": ""
+    },
+    {
+      "id": 14,
+      "passed": false,
+      "gen_time": 1.47,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmp015u1ha8.py\", line 21, in <module>\n    assert all_prefixes_for_list(['abc', 'def']) == [['a', 'ab', 'abc'], ['d',"
+    },
+    {
+      "id": 15,
+      "passed": true,
+      "gen_time": 1.19,
+      "error": ""
+    },
+    {
+      "id": 16,
+      "passed": true,
+      "gen_time": 0.89,
+      "error": ""
+    },
+    {
+      "id": 17,
+      "passed": false,
+      "gen_time": 3.05,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmp35l4ipvo.py\", line 34, in <module>\n    assert total_beats(['o o| .|', 'o| o| .| .|', 'o o']) == 21\nAssertionError"
+    },
+    {
+      "id": 18,
+      "passed": false,
+      "gen_time": 1.06,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpk680p4ob.py\", line 14, in <module>\n    assert total_substring_counts(['aaa', 'aaaa'], ['a', 'aa']) == {'a': 7, 'a"
+    },
+    {
+      "id": 19,
+      "passed": false,
+      "gen_time": 4.08,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpx7xnijr7.py\", line 46, in <module>\n    assert sort_and_concatenate(['zero zero', 'invalid numeral']) == 'zero zer"
+    },
+    {
+      "id": 20,
+      "passed": false,
+      "gen_time": 2.56,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpg5aywqdj.py\", line 32, in <module>\n    assert find_closest_pair_across_lists([[1.0, 2.0, 3.0], [4.0, 5.0, 2.2]]) "
+    },
+    {
+      "id": 21,
+      "passed": false,
+      "gen_time": 8.83,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmp3gu8xokd.py\", line 41, in <module>\n    assert rescale_nested_lists([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0], [7.0, 8.0, "
+    },
+    {
+      "id": 22,
+      "passed": false,
+      "gen_time": 1.14,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmptscgzp26.py\", line 14, in <module>\n    assert filter_nested_lists([['a', 3.14, 5], [1, 2, 'abc', {}, []]]) == [[5"
+    },
+    {
+      "id": 23,
+      "passed": true,
+      "gen_time": 0.61,
+      "error": ""
+    },
+    {
+      "id": 24,
+      "passed": true,
+      "gen_time": 3.01,
+      "error": ""
+    },
+    {
+      "id": 25,
+      "passed": true,
+      "gen_time": 1.56,
+      "error": ""
+    },
+    {
+      "id": 26,
+      "passed": true,
+      "gen_time": 1.85,
+      "error": ""
+    },
+    {
+      "id": 27,
+      "passed": true,
+      "gen_time": 0.75,
+      "error": ""
+    },
+    {
+      "id": 28,
+      "passed": false,
+      "gen_time": 0.71,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmp_8ee2_8_.py\", line 9, in <module>\n    assert concatenate_lists_of_strings([['a', 'b'], ['c', 'd'], ['e', 'f']]) ="
+    },
+    {
+      "id": 29,
+      "passed": false,
+      "gen_time": 1.58,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmp9y7x74x7.py\", line 18, in <module>\n    assert filter_by_multiple_prefixes([], ['a', 'b']) == set([])\nAssertionErr"
+    },
+    {
+      "id": 30,
+      "passed": true,
+      "gen_time": 0.93,
+      "error": ""
+    },
+    {
+      "id": 31,
+      "passed": true,
+      "gen_time": 1.53,
+      "error": ""
+    },
+    {
+      "id": 32,
+      "passed": false,
+      "gen_time": 13.08,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpzxf1yzz0.py\", line 129, in <module>\n    assert find_common_zero([[-6, 11, -6, 1], [1, -3, 2]]) == None\nAssertionE"
+    },
+    {
+      "id": 33,
+      "passed": false,
+      "gen_time": 1.83,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmp75q7zrgo.py\", line 17, in <module>\n    assert sort_every_third_sublist([[5, 6, 3], [4, 8, 9], [2, 1, 7]]) == [[5,"
+    },
+    {
+      "id": 34,
+      "passed": true,
+      "gen_time": 1.06,
+      "error": ""
+    },
+    {
+      "id": 35,
+      "passed": true,
+      "gen_time": 1.39,
+      "error": ""
+    },
+    {
+      "id": 36,
+      "passed": true,
+      "gen_time": 1.71,
+      "error": ""
+    },
+    {
+      "id": 37,
+      "passed": true,
+      "gen_time": 2.42,
+      "error": ""
+    },
+    {
+      "id": 38,
+      "passed": false,
+      "gen_time": 2.76,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpdgs2oom9.py\", line 27, in <module>\n    assert decode_all_cyclic(['abc', 'def']) == 'cabfde'\nAssertionError\n"
+    },
+    {
+      "id": 39,
+      "passed": true,
+      "gen_time": 2.4,
+      "error": ""
+    },
+    {
+      "id": 40,
+      "passed": true,
+      "gen_time": 3.01,
+      "error": ""
+    },
+    {
+      "id": 41,
+      "passed": false,
+      "gen_time": 1.86,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmph85p6y39.py\", line 19, in <module>\n    assert car_race_collision(3) + car_race_collision(3) == 6\nAssertionError\n"
+    },
+    {
+      "id": 42,
+      "passed": false,
+      "gen_time": 1.01,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpa52fyw09.py\", line 10, in <module>\n    assert incr_nested_list([[1, 2, 3], [4, 5, 6]]) == [[3, 4, 5], [6, 7, 8]]\n"
+    },
+    {
+      "id": 43,
+      "passed": true,
+      "gen_time": 1.14,
+      "error": ""
+    },
+    {
+      "id": 44,
+      "passed": true,
+      "gen_time": 2.2,
+      "error": ""
+    },
+    {
+      "id": 45,
+      "passed": true,
+      "gen_time": 0.88,
+      "error": ""
+    },
+    {
+      "id": 46,
+      "passed": false,
+      "gen_time": 4.2,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmp61ef7l9z.py\", line 40, in <module>\n    assert sum_fib4_values([5, 6, 7]) == 26\nNameError: name 'sum_fib4_values' "
+    },
+    {
+      "id": 47,
+      "passed": true,
+      "gen_time": 3.81,
+      "error": ""
+    },
+    {
+      "id": 48,
+      "passed": true,
+      "gen_time": 1.88,
+      "error": ""
+    },
+    {
+      "id": 49,
+      "passed": false,
+      "gen_time": 1.25,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpogsskvc9.py\", line 15, in <module>\n    assert sum_modp_list([(0, 1), (0, 2), (0, 3), (0, 4)]) == 4\nAssertionError"
+    },
+    {
+      "id": 50,
+      "passed": true,
+      "gen_time": 3.95,
+      "error": ""
+    },
+    {
+      "id": 51,
+      "passed": true,
+      "gen_time": 1.04,
+      "error": ""
+    },
+    {
+      "id": 52,
+      "passed": true,
+      "gen_time": 0.82,
+      "error": ""
+    },
+    {
+      "id": 53,
+      "passed": true,
+      "gen_time": 0.87,
+      "error": ""
+    },
+    {
+      "id": 54,
+      "passed": false,
+      "gen_time": 1.48,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpa5faillr.py\", line 17, in <module>\n    assert can_form_by_rearranging(['eabcdzzzz', 'dddzzzzzzzddeddabc', 'abcd',"
+    },
+    {
+      "id": 55,
+      "passed": true,
+      "gen_time": 1.91,
+      "error": ""
+    },
+    {
+      "id": 56,
+      "passed": false,
+      "gen_time": 2.11,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpvsmw4pxt.py\", line 34, in <module>\n    assert check_bracket_strings(['<>', '<<><>>', '><<>']) == [True, True, Fal"
+    },
+    {
+      "id": 57,
+      "passed": true,
+      "gen_time": 2.7,
+      "error": ""
+    },
+    {
+      "id": 58,
+      "passed": true,
+      "gen_time": 1.25,
+      "error": ""
+    },
+    {
+      "id": 59,
+      "passed": true,
+      "gen_time": 3.81,
+      "error": ""
+    },
+    {
+      "id": 60,
+      "passed": true,
+      "gen_time": 1.07,
+      "error": ""
+    },
+    {
+      "id": 61,
+      "passed": true,
+      "gen_time": 1.79,
+      "error": ""
+    },
+    {
+      "id": 62,
+      "passed": false,
+      "gen_time": 1.43,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpa_qmfk50.py\", line 19, in <module>\n    assert second_derivative([[5], [7]]) == [[], []]\nAssertionError\n"
+    },
+    {
+      "id": 63,
+      "passed": false,
+      "gen_time": 4.66,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpw4kgjwny.py\", line 50, in <module>\n    assert sum_fibfib_positions([1, 5, 8]) == 28\nNameError: name 'sum_fibfib_p"
+    },
+    {
+      "id": 64,
+      "passed": true,
+      "gen_time": 1.63,
+      "error": ""
+    },
+    {
+      "id": 65,
+      "passed": true,
+      "gen_time": 2.39,
+      "error": ""
+    },
+    {
+      "id": 66,
+      "passed": true,
+      "gen_time": 1.01,
+      "error": ""
+    },
+    {
+      "id": 67,
+      "passed": true,
+      "gen_time": 1.59,
+      "error": ""
+    },
+    {
+      "id": 68,
+      "passed": true,
+      "gen_time": 1.65,
+      "error": ""
+    },
+    {
+      "id": 69,
+      "passed": true,
+      "gen_time": 1.98,
+      "error": ""
+    },
+    {
+      "id": 70,
+      "passed": true,
+      "gen_time": 2.66,
+      "error": ""
+    },
+    {
+      "id": 71,
+      "passed": false,
+      "gen_time": 2.7,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpmbt71g9l.py\", line 27, in <module>\n    assert total_triangle_area([(1, 2, 3), (1, 1, 1)]) == 0.43\nAssertionError\n"
+    },
+    {
+      "id": 72,
+      "passed": false,
+      "gen_time": 4.04,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpamv0cv9o.py\", line 41, in <module>\n    assert can_objects_fly([[1, 2], [3, 2, 3], [3]], [5, 9, 5]) == [False, Tru"
+    },
+    {
+      "id": 73,
+      "passed": false,
+      "gen_time": 3.77,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpa6acex8m.py\", line 40, in <module>\n    assert smallest_change_2d([[1,2,3,5,4,7,9,6], [1,2,3,4,3,2,2], [1,2,3,2,1]"
+    },
+    {
+      "id": 74,
+      "passed": true,
+      "gen_time": 1.35,
+      "error": ""
+    },
+    {
+      "id": 75,
+      "passed": true,
+      "gen_time": 2.58,
+      "error": ""
+    },
+    {
+      "id": 76,
+      "passed": true,
+      "gen_time": 4.92,
+      "error": ""
+    },
+    {
+      "id": 77,
+      "passed": true,
+      "gen_time": 1.66,
+      "error": ""
+    },
+    {
+      "id": 78,
+      "passed": true,
+      "gen_time": 1.39,
+      "error": ""
+    },
+    {
+      "id": 79,
+      "passed": false,
+      "gen_time": 2.57,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpvpkqfo35.py\", line 30, in <module>\n    assert convert_decimals_to_binary_and_back([15, 32]) == 'db1111100000db'\nA"
+    },
+    {
+      "id": 80,
+      "passed": true,
+      "gen_time": 1.65,
+      "error": ""
+    },
+    {
+      "id": 81,
+      "passed": false,
+      "gen_time": 2.35,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmp3964ujs4.py\", line 26, in <module>\n    assert overall_letter_grades([[4.0, 3.5], [3.0, 2.0], [1.7, 2.3], [3.3, 3."
+    },
+    {
+      "id": 82,
+      "passed": true,
+      "gen_time": 2.0,
+      "error": ""
+    },
+    {
+      "id": 83,
+      "passed": false,
+      "gen_time": 4.51,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmp0ll1xl4d.py\", line 30, in <module>\n    assert complex_starts_one_ends(1) == (1, 0, 0)\nAssertionError\n"
+    },
+    {
+      "id": 84,
+      "passed": false,
+      "gen_time": 1.81,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmprslc3ixz.py\", line 20, in <module>\n    assert new_solve([1000, 150, 147]) == '10010111011'\nAssertionError\n"
+    },
+    {
+      "id": 85,
+      "passed": true,
+      "gen_time": 1.38,
+      "error": ""
+    },
+    {
+      "id": 86,
+      "passed": false,
+      "gen_time": 2.79,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpdgdey82m.py\", line 32, in <module>\n    assert multi_anti_shuffle(['Hi', 'hello', 'Hello World!!!']) == (['Hi', 'e"
+    },
+    {
+      "id": 87,
+      "passed": true,
+      "gen_time": 2.47,
+      "error": ""
+    },
+    {
+      "id": 88,
+      "passed": false,
+      "gen_time": 1.88,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmplw4q_lmn.py\", line 23, in <module>\n    assert combine_and_sort_arrays([[2, 4, 3, 0, 1, 5], [6, 7, 8]]) == [8, 7, "
+    },
+    {
+      "id": 89,
+      "passed": false,
+      "gen_time": 1.89,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmp1tgk47r1.py\", line 19, in <module>\n    assert encrypt_message(['hi', 'asdfghjkl', 'gf', 'et']) == ['lm', 'ewhjkln"
+    },
+    {
+      "id": 90,
+      "passed": true,
+      "gen_time": 1.43,
+      "error": ""
+    },
+    {
+      "id": 91,
+      "passed": false,
+      "gen_time": 2.46,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpxjq2oc7y.py\", line 29, in <module>\n    assert count_total_boredoms(['The sky is blue. The sun is shining. I love "
+    },
+    {
+      "id": 92,
+      "passed": true,
+      "gen_time": 1.6,
+      "error": ""
+    },
+    {
+      "id": 93,
+      "passed": false,
+      "gen_time": 0.98,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmp9vg204ho.py\", line 9, in <module>\n    assert encode_and_concatenate(['test', 'This is a message']) == 'GGCSSGM C "
+    },
+    {
+      "id": 94,
+      "passed": true,
+      "gen_time": 2.39,
+      "error": ""
+    },
+    {
+      "id": 95,
+      "passed": true,
+      "gen_time": 2.02,
+      "error": ""
+    },
+    {
+      "id": 96,
+      "passed": true,
+      "gen_time": 2.16,
+      "error": ""
+    },
+    {
+      "id": 97,
+      "passed": true,
+      "gen_time": 1.27,
+      "error": ""
+    },
+    {
+      "id": 98,
+      "passed": true,
+      "gen_time": 1.69,
+      "error": ""
+    },
+    {
+      "id": 99,
+      "passed": true,
+      "gen_time": 1.73,
+      "error": ""
+    },
+    {
+      "id": 100,
+      "passed": false,
+      "gen_time": 0.97,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmp9i3f6_j3.py\", line 13, in <module>\n    assert create_pyramid(2) == [[1], [2, 4]]\nAssertionError\n"
+    },
+    {
+      "id": 101,
+      "passed": false,
+      "gen_time": 1.16,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpc98qxlp3.py\", line 11, in <module>\n    assert sentences_to_words(\"Hi, my name is John\\nOne, two, three, four, fiv"
+    },
+    {
+      "id": 102,
+      "passed": true,
+      "gen_time": 2.66,
+      "error": ""
+    },
+    {
+      "id": 103,
+      "passed": true,
+      "gen_time": 1.52,
+      "error": ""
+    },
+    {
+      "id": 104,
+      "passed": true,
+      "gen_time": 1.89,
+      "error": ""
+    },
+    {
+      "id": 105,
+      "passed": false,
+      "gen_time": 2.48,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpda5h98m0.py\", line 32, in <module>\n    assert process_arrays([[2, 1, 1, 4, 5, 8, 2, 3], [9, 7, 6], [1, -1, 55]]) "
+    },
+    {
+      "id": 106,
+      "passed": true,
+      "gen_time": 2.0,
+      "error": ""
+    },
+    {
+      "id": 107,
+      "passed": true,
+      "gen_time": 1.78,
+      "error": ""
+    },
+    {
+      "id": 108,
+      "passed": true,
+      "gen_time": 2.54,
+      "error": ""
+    },
+    {
+      "id": 109,
+      "passed": true,
+      "gen_time": 6.12,
+      "error": ""
+    },
+    {
+      "id": 110,
+      "passed": false,
+      "gen_time": 25.23,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmp70475wsz.py\", line 170, in <module>\n    assert can_make_even_with_exchange([1, 3, 5], [2, 4, 6], [1, 7, 9], [8, 1"
+    },
+    {
+      "id": 111,
+      "passed": true,
+      "gen_time": 2.08,
+      "error": ""
+    },
+    {
+      "id": 112,
+      "passed": false,
+      "gen_time": 1.91,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpoj7xts3d.py\", line 24, in <module>\n    assert process_strings([('abcde', 'ae'), ('abcdef', 'b'), ('abcdedcba', 'a"
+    },
+    {
+      "id": 113,
+      "passed": false,
+      "gen_time": 1.46,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpth7rqz86.py\", line 13, in <module>\n    assert odd_count_nested([['1234567'], ['3', '11111111']]) == [[\"the number"
+    },
+    {
+      "id": 114,
+      "passed": true,
+      "gen_time": 5.68,
+      "error": ""
+    },
+    {
+      "id": 115,
+      "passed": true,
+      "gen_time": 1.45,
+      "error": ""
+    },
+    {
+      "id": 116,
+      "passed": true,
+      "gen_time": 1.8,
+      "error": ""
+    },
+    {
+      "id": 117,
+      "passed": false,
+      "gen_time": 1.79,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpra8rhi7m.py\", line 26, in <module>\n    assert select_words_from_list([\"\", \"Mary had a little lamb\", \"\", \"Hello wo"
+    },
+    {
+      "id": 118,
+      "passed": true,
+      "gen_time": 2.15,
+      "error": ""
+    },
+    {
+      "id": 119,
+      "passed": false,
+      "gen_time": 25.55,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmp6ujzn1ji.py\", line 121, in <module>\n    assert can_form_good_string(['()(', ')']) == 'Yes'\nAssertionError\n"
+    },
+    {
+      "id": 120,
+      "passed": false,
+      "gen_time": 1.57,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpp068c10c.py\", line 18, in <module>\n    assert maximum_for_multiple_arrays([[-3, -4, 5], [4, -4, 4], [-3, 2, 1, 2,"
+    },
+    {
+      "id": 121,
+      "passed": true,
+      "gen_time": 1.67,
+      "error": ""
+    },
+    {
+      "id": 122,
+      "passed": true,
+      "gen_time": 1.78,
+      "error": ""
+    },
+    {
+      "id": 123,
+      "passed": true,
+      "gen_time": 1.85,
+      "error": ""
+    },
+    {
+      "id": 124,
+      "passed": false,
+      "gen_time": 4.07,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmphdg7incj.py\", line 49, in <module>\n    assert count_valid_dates(['03-11-2000', '15-01-2012', '04-0-2040', '06-04-"
+    },
+    {
+      "id": 125,
+      "passed": false,
+      "gen_time": 25.84,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmppyiaag2y.py\", line 165, in <module>\n    assert process_strings(['Hello world!', 'Hello,world!', 'abcdef']) == {'H"
+    },
+    {
+      "id": 126,
+      "passed": false,
+      "gen_time": 2.74,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpqiu0092r.py\", line 28, in <module>\n    assert check_sublists_sorted([[5], [1, 2, 3, 4, 5], [1, 3, 2, 4, 5], [1, 2"
+    },
+    {
+      "id": 127,
+      "passed": false,
+      "gen_time": 3.1,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpfehat4pj.py\", line 36, in <module>\n    assert find_prime_intersection_pair([(-1, 1), (0, 4)]) == []\nAssertionErro"
+    },
+    {
+      "id": 128,
+      "passed": true,
+      "gen_time": 2.4,
+      "error": ""
+    },
+    {
+      "id": 129,
+      "passed": false,
+      "gen_time": 11.86,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpn33b9ye2.py\", line 118, in <module>\n    assert minPath3D([[[1,2,3],[4,5,6],[7,8,9]], [[1,2,3],[4,5,6],[7,8,9]], ["
+    },
+    {
+      "id": 130,
+      "passed": false,
+      "gen_time": 2.82,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpvgszqiq7.py\", line 35, in <module>\n    assert multi_tri(3) == [[1], [1, 3], [1, 3, 2], [1, 3, 2, 8]]\nAssertionErr"
+    },
+    {
+      "id": 131,
+      "passed": true,
+      "gen_time": 1.76,
+      "error": ""
+    },
+    {
+      "id": 132,
+      "passed": true,
+      "gen_time": 4.68,
+      "error": ""
+    },
+    {
+      "id": 133,
+      "passed": true,
+      "gen_time": 1.37,
+      "error": ""
+    },
+    {
+      "id": 134,
+      "passed": true,
+      "gen_time": 2.49,
+      "error": ""
+    },
+    {
+      "id": 135,
+      "passed": false,
+      "gen_time": 2.09,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpqwijrx3h.py\", line 21, in <module>\n    assert max_subarray_sum([1,2,4,3,5]) == 5\nAssertionError\n"
+    },
+    {
+      "id": 136,
+      "passed": true,
+      "gen_time": 1.62,
+      "error": ""
+    },
+    {
+      "id": 137,
+      "passed": true,
+      "gen_time": 1.93,
+      "error": ""
+    },
+    {
+      "id": 138,
+      "passed": true,
+      "gen_time": 2.57,
+      "error": ""
+    },
+    {
+      "id": 139,
+      "passed": true,
+      "gen_time": 2.02,
+      "error": ""
+    },
+    {
+      "id": 140,
+      "passed": true,
+      "gen_time": 1.76,
+      "error": ""
+    },
+    {
+      "id": 141,
+      "passed": false,
+      "gen_time": 5.01,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpa7gt10nn.py\", line 61, in <module>\n    assert validate_file_names(['example.txt', '1example.dll', 'test.exe', 'fi"
+    },
+    {
+      "id": 142,
+      "passed": false,
+      "gen_time": 1.5,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpqmlu_8f2.py\", line 15, in <module>\n    assert total_score([[1,2,3], [4,5,6]]) == 60\nAssertionError\n"
+    },
+    {
+      "id": 143,
+      "passed": true,
+      "gen_time": 2.12,
+      "error": ""
+    },
+    {
+      "id": 144,
+      "passed": true,
+      "gen_time": 2.95,
+      "error": ""
+    },
+    {
+      "id": 145,
+      "passed": true,
+      "gen_time": 2.68,
+      "error": ""
+    },
+    {
+      "id": 146,
+      "passed": true,
+      "gen_time": 1.42,
+      "error": ""
+    },
+    {
+      "id": 147,
+      "passed": false,
+      "gen_time": 1.97,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpdd270l8e.py\", line 21, in <module>\n    assert get_max_quadruples([1, 3, 7, 13, 21]) == 1\nAssertionError\n"
+    },
+    {
+      "id": 148,
+      "passed": false,
+      "gen_time": 4.96,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmp2spdc7q9.py\", line 47, in <module>\n    assert find_shortest_path(['Jupiter', 'Neptune']) == ['Saturn', 'Uranus', "
+    },
+    {
+      "id": 149,
+      "passed": false,
+      "gen_time": 1.2,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpxi_1bi6s.py\", line 14, in <module>\n    assert merge_sorted_lists([['aa', 'a', 'aaa'], ['ab', 'a', 'aaa', 'cd']]) "
+    },
+    {
+      "id": 150,
+      "passed": true,
+      "gen_time": 2.32,
+      "error": ""
+    },
+    {
+      "id": 151,
+      "passed": true,
+      "gen_time": 1.73,
+      "error": ""
+    },
+    {
+      "id": 152,
+      "passed": true,
+      "gen_time": 1.32,
+      "error": ""
+    },
+    {
+      "id": 153,
+      "passed": false,
+      "gen_time": 2.39,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpp8nyts1g.py\", line 28, in <module>\n    assert Strongest_Extensions({'Slices': ['SErviNGSliCes', 'Cheese', 'StuFfe"
+    },
+    {
+      "id": 154,
+      "passed": false,
+      "gen_time": 2.23,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmp2orjzpbe.py\", line 26, in <module>\n    assert valid_rotations(['hello', 'ell']) == [False, True]\nAssertionError\n"
+    },
+    {
+      "id": 155,
+      "passed": true,
+      "gen_time": 1.7,
+      "error": ""
+    },
+    {
+      "id": 156,
+      "passed": true,
+      "gen_time": 3.61,
+      "error": ""
+    },
+    {
+      "id": 157,
+      "passed": true,
+      "gen_time": 1.65,
+      "error": ""
+    },
+    {
+      "id": 158,
+      "passed": true,
+      "gen_time": 1.72,
+      "error": ""
+    },
+    {
+      "id": 159,
+      "passed": false,
+      "gen_time": 1.29,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmptsb7e4q8.py\", line 18, in <module>\n    assert feed_rabbits([(5, 6), (4, 8), (1, 10)], 25) == [24, 1]\nAssertionErr"
+    },
+    {
+      "id": 160,
+      "passed": false,
+      "gen_time": 4.75,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpc7wwlcit.py\", line 54, in <module>\n    assert solve_complex_algebra([(['+', '*', '-'], [2, 3, 4, 5]), (['*', '//'"
+    },
+    {
+      "id": 161,
+      "passed": true,
+      "gen_time": 3.0,
+      "error": ""
+    },
+    {
+      "id": 162,
+      "passed": true,
+      "gen_time": 1.42,
+      "error": ""
+    },
+    {
+      "id": 163,
+      "passed": false,
+      "gen_time": 2.32,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\mmkha\\AppData\\Local\\Temp\\claude\\tmpmhzqzbfp.py\", line 30, in <module>\n    assert generate_even_digits_lists([(2, 8), (8, 2), (10, 14)]) == [[2, 4, 6"
+    }
+  ],
+  "total_time_s": 476.1
+}
