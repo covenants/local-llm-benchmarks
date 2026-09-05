@@ -1,0 +1,1454 @@
+EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEF                                  [100%]
+=================================== ERRORS ====================================
+________________________ ERROR at setup of test_health ________________________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+_____________ ERROR at setup of test_create_returns_201_and_code ______________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+______________ ERROR at setup of test_generated_codes_are_unique ______________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+_____________________ ERROR at setup of test_custom_alias _____________________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+______________ ERROR at setup of test_duplicate_alias_conflicts _______________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+_________ ERROR at setup of test_invalid_create_returns_400[payload0] _________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+_________ ERROR at setup of test_invalid_create_returns_400[payload1] _________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+_________ ERROR at setup of test_invalid_create_returns_400[payload2] _________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+_________ ERROR at setup of test_invalid_create_returns_400[payload3] _________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+_________ ERROR at setup of test_invalid_create_returns_400[payload4] _________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+_________ ERROR at setup of test_invalid_create_returns_400[payload5] _________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+_________ ERROR at setup of test_invalid_create_returns_400[payload6] _________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+_________ ERROR at setup of test_invalid_create_returns_400[payload7] _________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+_________ ERROR at setup of test_invalid_create_returns_400[payload8] _________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+_________ ERROR at setup of test_invalid_create_returns_400[payload9] _________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+________ ERROR at setup of test_invalid_create_returns_400[payload10] _________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+________ ERROR at setup of test_invalid_create_returns_400[payload11] _________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+________ ERROR at setup of test_invalid_create_returns_400[payload12] _________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+________ ERROR at setup of test_invalid_create_returns_400[payload13] _________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+________ ERROR at setup of test_invalid_create_returns_400[payload14] _________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+________ ERROR at setup of test_invalid_create_returns_400[payload15] _________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+______________ ERROR at setup of test_malformed_json_returns_400 ______________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+______________ ERROR at setup of test_redirect_302_with_location ______________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+_________________ ERROR at setup of test_redirect_unknown_404 _________________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+___________________ ERROR at setup of test_clicks_increment ___________________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+___________ ERROR at setup of test_stats_does_not_increment_clicks ____________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+_____________ ERROR at setup of test_concurrent_clicks_are_exact ______________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+_______________ ERROR at setup of test_expired_link_returns_410 _______________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+__________ ERROR at setup of test_expired_link_does_not_count_click ___________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+_____________________ ERROR at setup of test_stats_shape ______________________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+__________________ ERROR at setup of test_stats_null_expiry ___________________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+__________________ ERROR at setup of test_stats_unknown_404 ___________________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+_________________ ERROR at setup of test_delete_204_then_404 __________________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+__________________ ERROR at setup of test_delete_unknown_404 __________________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+___________________ ERROR at setup of test_wrong_method_405 ___________________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+_________________ ERROR at setup of test_unknown_api_path_404 _________________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+____________ ERROR at setup of test_sql_injection_stored_verbatim _____________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+___________ ERROR at setup of test_sql_injection_in_alias_rejected ____________
+
+request = <SubRequest 'server' for <Function test_health>>
+
+    @pytest.fixture(scope="module")
+    def server(request):
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "links.db")
+        proc = _spawn(app_path, port, db_path)
+        client = Client(port)
+>       if not _await_health(client, proc):
+
+app_build_eval\spec\test_acceptance.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC8604490>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+================================== FAILURES ===================================
+_________________________ test_state_survives_restart _________________________
+
+request = <FixtureRequest for <Function test_state_survives_restart>>
+
+    def test_state_survives_restart(request):
+        """Create a link, kill the server, restart on the same db, confirm state is intact.
+    
+        Uses its own server instance rather than the module-scoped one so that
+        killing it cannot affect the other tests.
+        """
+        app_path = request.config.getoption("--app")
+        port = _free_port()
+        db_path = os.path.join(tempfile.mkdtemp(), "restart.db")
+        client = Client(port)
+    
+        first = _spawn(app_path, port, db_path)
+        try:
+>           assert _await_health(client, first), "server never became healthy"
+
+app_build_eval\spec\test_acceptance.py:340: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+client = <test_acceptance.Client object at 0x0000021EC85CA3B0>
+proc = <Popen: returncode: 1 args: ['C:\\Users\\mmkha\\AppData\\Local\\Programs\\Py...>
+timeout = 20.0
+
+    def _await_health(client, proc, timeout=20.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if proc.poll() is not None:
+                _out, err = proc.communicate()
+>               pytest.fail("server exited during startup:\n" + err.decode(errors="replace")[:2000])
+E               Failed: server exited during startup:
+E                 File "D:\Data\Local_LLM_Testing\app_build_eval\submissions\qwen3-coder-30b-iq4xs\app.py", line 268
+
+E                   global DB_PATH
+
+E                   ^^^^^^^^^^^^^^
+
+E               SyntaxError: name 'DB_PATH' is used prior to global declaration
+
+app_build_eval\spec\test_acceptance.py:83: Failed
+=========================== short test summary info ===========================
+FAILED app_build_eval/spec/test_acceptance.py::test_state_survives_restart - ...
+ERROR app_build_eval/spec/test_acceptance.py::test_health - Failed: server ex...
+ERROR app_build_eval/spec/test_acceptance.py::test_create_returns_201_and_code
+ERROR app_build_eval/spec/test_acceptance.py::test_generated_codes_are_unique
+ERROR app_build_eval/spec/test_acceptance.py::test_custom_alias - Failed: ser...
+ERROR app_build_eval/spec/test_acceptance.py::test_duplicate_alias_conflicts
+ERROR app_build_eval/spec/test_acceptance.py::test_invalid_create_returns_400[payload0]
+ERROR app_build_eval/spec/test_acceptance.py::test_invalid_create_returns_400[payload1]
+ERROR app_build_eval/spec/test_acceptance.py::test_invalid_create_returns_400[payload2]
+ERROR app_build_eval/spec/test_acceptance.py::test_invalid_create_returns_400[payload3]
+ERROR app_build_eval/spec/test_acceptance.py::test_invalid_create_returns_400[payload4]
+ERROR app_build_eval/spec/test_acceptance.py::test_invalid_create_returns_400[payload5]
+ERROR app_build_eval/spec/test_acceptance.py::test_invalid_create_returns_400[payload6]
+ERROR app_build_eval/spec/test_acceptance.py::test_invalid_create_returns_400[payload7]
+ERROR app_build_eval/spec/test_acceptance.py::test_invalid_create_returns_400[payload8]
+ERROR app_build_eval/spec/test_acceptance.py::test_invalid_create_returns_400[payload9]
+ERROR app_build_eval/spec/test_acceptance.py::test_invalid_create_returns_400[payload10]
+ERROR app_build_eval/spec/test_acceptance.py::test_invalid_create_returns_400[payload11]
+ERROR app_build_eval/spec/test_acceptance.py::test_invalid_create_returns_400[payload12]
+ERROR app_build_eval/spec/test_acceptance.py::test_invalid_create_returns_400[payload13]
+ERROR app_build_eval/spec/test_acceptance.py::test_invalid_create_returns_400[payload14]
+ERROR app_build_eval/spec/test_acceptance.py::test_invalid_create_returns_400[payload15]
+ERROR app_build_eval/spec/test_acceptance.py::test_malformed_json_returns_400
+ERROR app_build_eval/spec/test_acceptance.py::test_redirect_302_with_location
+ERROR app_build_eval/spec/test_acceptance.py::test_redirect_unknown_404 - Fai...
+ERROR app_build_eval/spec/test_acceptance.py::test_clicks_increment - Failed:...
+ERROR app_build_eval/spec/test_acceptance.py::test_stats_does_not_increment_clicks
+ERROR app_build_eval/spec/test_acceptance.py::test_concurrent_clicks_are_exact
+ERROR app_build_eval/spec/test_acceptance.py::test_expired_link_returns_410
+ERROR app_build_eval/spec/test_acceptance.py::test_expired_link_does_not_count_click
+ERROR app_build_eval/spec/test_acceptance.py::test_stats_shape - Failed: serv...
+ERROR app_build_eval/spec/test_acceptance.py::test_stats_null_expiry - Failed...
+ERROR app_build_eval/spec/test_acceptance.py::test_stats_unknown_404 - Failed...
+ERROR app_build_eval/spec/test_acceptance.py::test_delete_204_then_404 - Fail...
+ERROR app_build_eval/spec/test_acceptance.py::test_delete_unknown_404 - Faile...
+ERROR app_build_eval/spec/test_acceptance.py::test_wrong_method_405 - Failed:...
+ERROR app_build_eval/spec/test_acceptance.py::test_unknown_api_path_404 - Fai...
+ERROR app_build_eval/spec/test_acceptance.py::test_sql_injection_stored_verbatim
+ERROR app_build_eval/spec/test_acceptance.py::test_sql_injection_in_alias_rejected
+1 failed, 38 errors in 5.11s

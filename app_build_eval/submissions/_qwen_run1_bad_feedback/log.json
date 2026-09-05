@@ -1,0 +1,43 @@
+{
+  "model": "qwen3-coder-30b-iq4xs",
+  "rounds": [
+    {
+      "round": 0,
+      "lines": 277,
+      "tokens": 1866,
+      "seconds": 22.6,
+      "passed": 0,
+      "failed": 1
+    },
+    {
+      "round": 1,
+      "lines": 277,
+      "tokens": 1875,
+      "seconds": 13.8,
+      "passed": 0,
+      "failed": 1
+    },
+    {
+      "round": 2,
+      "lines": 277,
+      "tokens": 1875,
+      "seconds": 14.2,
+      "passed": 0,
+      "failed": 1
+    },
+    {
+      "round": 3,
+      "lines": 277,
+      "tokens": 1875,
+      "seconds": 14.1,
+      "passed": 0,
+      "failed": 1
+    }
+  ],
+  "final": {
+    "passed": 0,
+    "failed": 1,
+    "total": 1,
+    "pass_rate": 0.0
+  }
+}

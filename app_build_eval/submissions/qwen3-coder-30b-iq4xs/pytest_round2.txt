@@ -1,0 +1,450 @@
+........................FFFFFFFFFFFFFFF                                  [100%]
+================================== FAILURES ===================================
+____________________________ test_clicks_increment ____________________________
+app_build_eval\spec\test_acceptance.py:206: in test_clicks_increment
+    assert stats["clicks"] == 3
+E   KeyError: 'clicks'
+____________________ test_stats_does_not_increment_clicks _____________________
+app_build_eval\spec\test_acceptance.py:212: in test_stats_does_not_increment_clicks
+    c.request("GET", "/" + code)
+app_build_eval\spec\test_acceptance.py:58: in request
+    with opener.open(req, timeout=10) as r:
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:519: in open
+    response = self._open(req, data)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:536: in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:496: in _call_chain
+    result = func(*args)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1377: in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1352: in do_open
+    r = h.getresponse()
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1374: in getresponse
+    response.begin()
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:318: in begin
+    version, status, reason = self._read_status()
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:279: in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\socket.py:705: in readinto
+    return self._sock.recv_into(b)
+E   TimeoutError: timed out
+______________________ test_concurrent_clicks_are_exact _______________________
+app_build_eval\spec\test_acceptance.py:220: in test_concurrent_clicks_are_exact
+    _status, made = c.json("POST", "/api/links", {"url": "https://example.com/race"})
+app_build_eval\spec\test_acceptance.py:64: in json
+    status, _headers, raw = self.request(method, path, body)
+app_build_eval\spec\test_acceptance.py:58: in request
+    with opener.open(req, timeout=10) as r:
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:519: in open
+    response = self._open(req, data)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:536: in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:496: in _call_chain
+    result = func(*args)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1377: in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1352: in do_open
+    r = h.getresponse()
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1374: in getresponse
+    response.begin()
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:318: in begin
+    version, status, reason = self._read_status()
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:279: in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\socket.py:705: in readinto
+    return self._sock.recv_into(b)
+E   TimeoutError: timed out
+________________________ test_expired_link_returns_410 ________________________
+app_build_eval\spec\test_acceptance.py:231: in test_expired_link_returns_410
+    _status, made = c.json("POST", "/api/links",
+app_build_eval\spec\test_acceptance.py:64: in json
+    status, _headers, raw = self.request(method, path, body)
+app_build_eval\spec\test_acceptance.py:58: in request
+    with opener.open(req, timeout=10) as r:
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:519: in open
+    response = self._open(req, data)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:536: in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:496: in _call_chain
+    result = func(*args)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1377: in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1352: in do_open
+    r = h.getresponse()
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1374: in getresponse
+    response.begin()
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:318: in begin
+    version, status, reason = self._read_status()
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:279: in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\socket.py:705: in readinto
+    return self._sock.recv_into(b)
+E   TimeoutError: timed out
+___________________ test_expired_link_does_not_count_click ____________________
+app_build_eval\spec\test_acceptance.py:242: in test_expired_link_does_not_count_click
+    _status, made = c.json("POST", "/api/links",
+app_build_eval\spec\test_acceptance.py:64: in json
+    status, _headers, raw = self.request(method, path, body)
+app_build_eval\spec\test_acceptance.py:58: in request
+    with opener.open(req, timeout=10) as r:
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:519: in open
+    response = self._open(req, data)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:536: in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:496: in _call_chain
+    result = func(*args)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1377: in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1352: in do_open
+    r = h.getresponse()
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1374: in getresponse
+    response.begin()
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:318: in begin
+    version, status, reason = self._read_status()
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:279: in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\socket.py:705: in readinto
+    return self._sock.recv_into(b)
+E   TimeoutError: timed out
+______________________________ test_stats_shape _______________________________
+app_build_eval\spec\test_acceptance.py:255: in test_stats_shape
+    _status, made = c.json("POST", "/api/links",
+app_build_eval\spec\test_acceptance.py:64: in json
+    status, _headers, raw = self.request(method, path, body)
+app_build_eval\spec\test_acceptance.py:58: in request
+    with opener.open(req, timeout=10) as r:
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:519: in open
+    response = self._open(req, data)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:536: in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:496: in _call_chain
+    result = func(*args)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1377: in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1352: in do_open
+    r = h.getresponse()
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1374: in getresponse
+    response.begin()
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:318: in begin
+    version, status, reason = self._read_status()
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:279: in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\socket.py:705: in readinto
+    return self._sock.recv_into(b)
+E   TimeoutError: timed out
+___________________________ test_stats_null_expiry ____________________________
+app_build_eval\spec\test_acceptance.py:268: in test_stats_null_expiry
+    _status, made = c.json("POST", "/api/links", {"url": "https://example.com/noexp"})
+app_build_eval\spec\test_acceptance.py:64: in json
+    status, _headers, raw = self.request(method, path, body)
+app_build_eval\spec\test_acceptance.py:58: in request
+    with opener.open(req, timeout=10) as r:
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:519: in open
+    response = self._open(req, data)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:536: in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:496: in _call_chain
+    result = func(*args)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1377: in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1352: in do_open
+    r = h.getresponse()
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1374: in getresponse
+    response.begin()
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:318: in begin
+    version, status, reason = self._read_status()
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:279: in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\socket.py:705: in readinto
+    return self._sock.recv_into(b)
+E   TimeoutError: timed out
+___________________________ test_stats_unknown_404 ____________________________
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1348: in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1282: in request
+    self._send_request(method, url, body, headers, encode_chunked)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1328: in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1277: in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1037: in _send_output
+    self.send(msg)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:975: in send
+    self.connect()
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:941: in connect
+    self.sock = self._create_connection(
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\socket.py:845: in create_connection
+    raise err
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\socket.py:833: in create_connection
+    sock.connect(sa)
+E   ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+app_build_eval\spec\test_acceptance.py:274: in test_stats_unknown_404
+    status, _body = c.json("GET", "/api/links/nope-nope")
+app_build_eval\spec\test_acceptance.py:64: in json
+    status, _headers, raw = self.request(method, path, body)
+app_build_eval\spec\test_acceptance.py:58: in request
+    with opener.open(req, timeout=10) as r:
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:519: in open
+    response = self._open(req, data)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:536: in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:496: in _call_chain
+    result = func(*args)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1377: in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1351: in do_open
+    raise URLError(err)
+E   urllib.error.URLError: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>
+__________________________ test_delete_204_then_404 ___________________________
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1348: in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1282: in request
+    self._send_request(method, url, body, headers, encode_chunked)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1328: in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1277: in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1037: in _send_output
+    self.send(msg)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:975: in send
+    self.connect()
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:941: in connect
+    self.sock = self._create_connection(
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\socket.py:845: in create_connection
+    raise err
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\socket.py:833: in create_connection
+    sock.connect(sa)
+E   ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+app_build_eval\spec\test_acceptance.py:281: in test_delete_204_then_404
+    _status, made = c.json("POST", "/api/links", {"url": "https://example.com/del"})
+app_build_eval\spec\test_acceptance.py:64: in json
+    status, _headers, raw = self.request(method, path, body)
+app_build_eval\spec\test_acceptance.py:58: in request
+    with opener.open(req, timeout=10) as r:
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:519: in open
+    response = self._open(req, data)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:536: in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:496: in _call_chain
+    result = func(*args)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1377: in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1351: in do_open
+    raise URLError(err)
+E   urllib.error.URLError: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>
+___________________________ test_delete_unknown_404 ___________________________
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1348: in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1282: in request
+    self._send_request(method, url, body, headers, encode_chunked)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1328: in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1277: in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1037: in _send_output
+    self.send(msg)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:975: in send
+    self.connect()
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:941: in connect
+    self.sock = self._create_connection(
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\socket.py:845: in create_connection
+    raise err
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\socket.py:833: in create_connection
+    sock.connect(sa)
+E   ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+app_build_eval\spec\test_acceptance.py:290: in test_delete_unknown_404
+    status, _body = c.json("DELETE", "/api/links/never-existed")
+app_build_eval\spec\test_acceptance.py:64: in json
+    status, _headers, raw = self.request(method, path, body)
+app_build_eval\spec\test_acceptance.py:58: in request
+    with opener.open(req, timeout=10) as r:
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:519: in open
+    response = self._open(req, data)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:536: in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:496: in _call_chain
+    result = func(*args)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1377: in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1351: in do_open
+    raise URLError(err)
+E   urllib.error.URLError: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>
+____________________________ test_wrong_method_405 ____________________________
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1348: in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1282: in request
+    self._send_request(method, url, body, headers, encode_chunked)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1328: in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1277: in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1037: in _send_output
+    self.send(msg)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:975: in send
+    self.connect()
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:941: in connect
+    self.sock = self._create_connection(
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\socket.py:845: in create_connection
+    raise err
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\socket.py:833: in create_connection
+    sock.connect(sa)
+E   ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+app_build_eval\spec\test_acceptance.py:297: in test_wrong_method_405
+    status, _headers, _raw = c.request("DELETE", "/api/health")
+app_build_eval\spec\test_acceptance.py:58: in request
+    with opener.open(req, timeout=10) as r:
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:519: in open
+    response = self._open(req, data)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:536: in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:496: in _call_chain
+    result = func(*args)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1377: in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1351: in do_open
+    raise URLError(err)
+E   urllib.error.URLError: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>
+__________________________ test_unknown_api_path_404 __________________________
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1348: in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1282: in request
+    self._send_request(method, url, body, headers, encode_chunked)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1328: in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1277: in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1037: in _send_output
+    self.send(msg)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:975: in send
+    self.connect()
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:941: in connect
+    self.sock = self._create_connection(
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\socket.py:845: in create_connection
+    raise err
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\socket.py:833: in create_connection
+    sock.connect(sa)
+E   ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+app_build_eval\spec\test_acceptance.py:302: in test_unknown_api_path_404
+    status, _headers, _raw = c.request("GET", "/api/does-not-exist")
+app_build_eval\spec\test_acceptance.py:58: in request
+    with opener.open(req, timeout=10) as r:
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:519: in open
+    response = self._open(req, data)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:536: in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:496: in _call_chain
+    result = func(*args)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1377: in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1351: in do_open
+    raise URLError(err)
+E   urllib.error.URLError: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>
+_____________________ test_sql_injection_stored_verbatim ______________________
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1348: in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1282: in request
+    self._send_request(method, url, body, headers, encode_chunked)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1328: in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1277: in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1037: in _send_output
+    self.send(msg)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:975: in send
+    self.connect()
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:941: in connect
+    self.sock = self._create_connection(
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\socket.py:845: in create_connection
+    raise err
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\socket.py:833: in create_connection
+    sock.connect(sa)
+E   ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+app_build_eval\spec\test_acceptance.py:310: in test_sql_injection_stored_verbatim
+    status, made = c.json("POST", "/api/links", {"url": nasty})
+app_build_eval\spec\test_acceptance.py:64: in json
+    status, _headers, raw = self.request(method, path, body)
+app_build_eval\spec\test_acceptance.py:58: in request
+    with opener.open(req, timeout=10) as r:
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:519: in open
+    response = self._open(req, data)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:536: in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:496: in _call_chain
+    result = func(*args)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1377: in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1351: in do_open
+    raise URLError(err)
+E   urllib.error.URLError: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>
+____________________ test_sql_injection_in_alias_rejected _____________________
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1348: in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1282: in request
+    self._send_request(method, url, body, headers, encode_chunked)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1328: in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1277: in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:1037: in _send_output
+    self.send(msg)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:975: in send
+    self.connect()
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\http\client.py:941: in connect
+    self.sock = self._create_connection(
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\socket.py:845: in create_connection
+    raise err
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\socket.py:833: in create_connection
+    sock.connect(sa)
+E   ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+app_build_eval\spec\test_acceptance.py:319: in test_sql_injection_in_alias_rejected
+    status, _body = c.json("POST", "/api/links",
+app_build_eval\spec\test_acceptance.py:64: in json
+    status, _headers, raw = self.request(method, path, body)
+app_build_eval\spec\test_acceptance.py:58: in request
+    with opener.open(req, timeout=10) as r:
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:519: in open
+    response = self._open(req, data)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:536: in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:496: in _call_chain
+    result = func(*args)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1377: in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+C:\Users\mmkha\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1351: in do_open
+    raise URLError(err)
+E   urllib.error.URLError: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>
+_________________________ test_state_survives_restart _________________________
+app_build_eval\spec\test_acceptance.py:353: in test_state_survives_restart
+    assert status == 200
+E   assert 404 == 200
+=========================== short test summary info ===========================
+FAILED app_build_eval/spec/test_acceptance.py::test_clicks_increment - KeyErr...
+FAILED app_build_eval/spec/test_acceptance.py::test_stats_does_not_increment_clicks
+FAILED app_build_eval/spec/test_acceptance.py::test_concurrent_clicks_are_exact
+FAILED app_build_eval/spec/test_acceptance.py::test_expired_link_returns_410
+FAILED app_build_eval/spec/test_acceptance.py::test_expired_link_does_not_count_click
+FAILED app_build_eval/spec/test_acceptance.py::test_stats_shape - TimeoutErro...
+FAILED app_build_eval/spec/test_acceptance.py::test_stats_null_expiry - Timeo...
+FAILED app_build_eval/spec/test_acceptance.py::test_stats_unknown_404 - urlli...
+FAILED app_build_eval/spec/test_acceptance.py::test_delete_204_then_404 - url...
+FAILED app_build_eval/spec/test_acceptance.py::test_delete_unknown_404 - urll...
+FAILED app_build_eval/spec/test_acceptance.py::test_wrong_method_405 - urllib...
+FAILED app_build_eval/spec/test_acceptance.py::test_unknown_api_path_404 - ur...
+FAILED app_build_eval/spec/test_acceptance.py::test_sql_injection_stored_verbatim
+FAILED app_build_eval/spec/test_acceptance.py::test_sql_injection_in_alias_rejected
+FAILED app_build_eval/spec/test_acceptance.py::test_state_survives_restart - ...
+15 failed, 24 passed in 83.93s (0:01:23)
