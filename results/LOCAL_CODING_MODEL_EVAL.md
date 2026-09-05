@@ -47,20 +47,31 @@ Only 85 problems (51.8%) are solved by all three, but 116 (70.7%) are solved by
 at least one. That 70.7% oracle ceiling is ~7 points above any single model,
 so routing or best-of-n across two models buys more than swapping one for another.
 
-## Caveat: reasoning was disabled
+## On reasoning: disabling it was not a handicap
 
 Qwen 3.6 and 3.8 builds return their chain of thought in a **separate `thinking`
 response field and leave `content` empty**. The prompt-level `/no_think` token the
 original baseline script relied on is silently ignored by these builds. Left
 uncorrected, the model exhausts its entire token budget reasoning, returns no
-parseable code, and scores 0% — a harness artifact, not a capability measurement.
+parseable code, and scores 0% -- a harness artifact, not a capability measurement.
 
 `scripts/humaneval_pro_ollama.py` therefore controls reasoning through Ollama's
 API-level `think` flag, defaulting to **off** so results stay comparable to the
-non-thinking `qwen3-coder-30b` baseline. This is the fair comparison, but it
-plausibly understates Qwen 3.6, whose gains are meant to come from reasoning.
-Use `--think --max-tokens 8192` for the ceiling number; expect roughly 10x the
-wall time per problem.
+non-thinking `qwen3-coder-30b` baseline.
+
+That default was initially assumed to understate Qwen 3.6. It does not. Measured
+on the same 30 problems with an 8192-token budget:
+
+| `qwen3.6:35b-a3b-coding` | Pass rate | Avg gen |
+|---|---:|---:|
+| thinking off | 16/30 (53.3%) | 7.0 s |
+| thinking on | 14/30 (46.7%) | 28.4 s |
+
+Three problems regressed and one improved. Only one regression was a token
+cap-out; the other two produced confidently wrong code after reasoning. At n=30
+the difference is not significant on its own, but there is no sign of the gain
+that would justify 4x the wall time, so the non-thinking configuration is used
+throughout and the main results are not depressed by that choice.
 
 ## Recommendation
 
@@ -71,8 +82,9 @@ from both newer models.
 Keep `qwen3-coder-next` for work where quality matters more than latency — it
 solved 10 problems no other model got. Reach for it deliberately, not by default.
 
-`qwen3.6:35b-a3b-coding` has no clear niche here at these settings; re-evaluate
-with reasoning enabled before drawing a final conclusion.
+`qwen3.6:35b-a3b-coding` has no clear niche on this hardware. It is neither
+faster nor more accurate than the incumbent, and enabling its reasoning mode
+made it slower and slightly worse rather than better.
 
 ## Reproducing
 
