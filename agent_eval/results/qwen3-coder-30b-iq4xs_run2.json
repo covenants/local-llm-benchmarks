@@ -66,5 +66,6 @@
       "tool": null,
       "text": "DONE"
     }
-  ]
+  ],
+  "ran_tests_before_fixing": false
 }

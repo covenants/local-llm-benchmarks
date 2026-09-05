@@ -124,6 +124,14 @@ TASK = (
 )
 
 
+def _last(seq, name):
+    """Index of the last occurrence of `name` in seq, or -1."""
+    for i in range(len(seq) - 1, -1, -1):
+        if seq[i] == name:
+            return i
+    return -1
+
+
 class Sandbox:
     def __init__(self):
         self.dir = Path(tempfile.mkdtemp(prefix="agent_eval_"))
@@ -238,8 +246,16 @@ def run(model, num_ctx, verbose=True):
             "listed_first": bool(seq) and seq[0] == "list_files",
             "read_before_write": ("read_file" in seq and "write_file" in seq
                                   and seq.index("read_file") < seq.index("write_file")),
-            "verified_after_write": ("write_file" in seq and "run_tests" in seq
-                                     and seq.index("run_tests") > seq.index("write_file")),
+            # Compare LAST occurrences. A model that runs the tests first to
+            # observe the failure, then fixes, then re-runs, has still verified
+            # its fix -- comparing first occurrences scores that sequence as a
+            # failure and penalises what is arguably the better habit.
+            "verified_after_write": (
+                "write_file" in seq and "run_tests" in seq
+                and _last(seq, "run_tests") > _last(seq, "write_file")),
+            "ran_tests_before_fixing": (
+                "run_tests" in seq and "write_file" in seq
+                and seq.index("run_tests") < seq.index("write_file")),
             "seconds": round(time.time() - t0, 1),
             "final_test_output": detail,
             "transcript": transcript,
@@ -266,6 +282,7 @@ def main():
     print(f"  listed before acting: {result['listed_first']}")
     print(f"  read before writing : {result['read_before_write']}")
     print(f"  verified after fix  : {result['verified_after_write']}")
+    print(f"  ran tests first     : {result['ran_tests_before_fixing']}")
     print(f"  wall time           : {result['seconds']}s")
 
     out = Path(args.out) if args.out else (
